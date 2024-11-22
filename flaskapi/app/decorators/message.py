@@ -34,6 +34,8 @@ def validate_new_request(f):
     """
     Decorator to check if the request ID already exists in your log file. 
     If it does, the decorator returns an error response.
+    
+    It prevents duplicate processing of WhatsApp webhook requests by checking if the message ID is new.
     """
     
     @wraps(f)

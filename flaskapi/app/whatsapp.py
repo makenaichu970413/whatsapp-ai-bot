@@ -12,6 +12,7 @@ from app.config import VERSION, PHONE_NUMBER_ID, ACCESS_TOKEN, LOG_FILE, REQUEST
 from app.openai import GenerateResponse
 from app.utils.function import GetLog, UpdateLog, WriteExpiredLog, CleanText
 from app.utils.API import Post, Get
+from app.decorators.mongodb import GetBusiness
 
 # Log Files
 log_requests_filename = LOG_FILE["REQUESTS"]
@@ -248,7 +249,9 @@ def ResetRPM():
     with lock:
         for waID, contents in copied:
             # Safely access dictionary within this block
-            Conversation(waID, contents)
+            data = py_.get(contents,"[0].body", None)
+            business=GetBusiness(data)
+            Conversation(waID, contents, business)
             pass
     
 

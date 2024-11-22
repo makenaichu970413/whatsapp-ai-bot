@@ -2,6 +2,14 @@
 
 This project uses Docker Compose to set up a MongoDB database and a Flask API service. Follow the instructions below to get started.
 
+## Flow Overview
+
+Below is a visual representation of the application's logic flow:
+
+![Application Logic Flow](./flaskapi/img/whatsapp-ai-bot-logic-flow.png)
+
+This diagram illustrates the interaction between the MongoDB database and the Flask API, highlighting the key processes and data flow within the application.
+
 ## Prerequisites
 
 - [Docker](https://www.docker.com/get-started) installed on your machine.
