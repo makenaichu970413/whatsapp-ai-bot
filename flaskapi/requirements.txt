@@ -1,0 +1,8 @@
+flask
+pydash
+python-dotenv
+openai
+aiohttp
+requests
+pymongo
+openai-whisper

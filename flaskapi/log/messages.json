@@ -1,0 +1,46 @@
+{
+    "601110974028": [
+        {
+            "content": "\ud83d\ude2d",
+            "body": {
+                "object": "whatsapp_business_account",
+                "entry": [
+                    {
+                        "id": "474911149034761",
+                        "changes": [
+                            {
+                                "value": {
+                                    "messaging_product": "whatsapp",
+                                    "metadata": {
+                                        "display_phone_number": "15551852925",
+                                        "phone_number_id": "400351199837427"
+                                    },
+                                    "contacts": [
+                                        {
+                                            "profile": {
+                                                "name": "CCC"
+                                            },
+                                            "wa_id": "601110974028"
+                                        }
+                                    ],
+                                    "messages": [
+                                        {
+                                            "from": "601110974028",
+                                            "id": "wamid.HBgMNjAxMTEwOTc0MDI4FQIAEhggM0IzNDE3NDMyMEVGMUZCNzE5QTM2NjE0MUM3NUQ4MDAA",
+                                            "timestamp": "1731310411",
+                                            "text": {
+                                                "body": "\ud83d\ude2d"
+                                            },
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "field": "messages"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

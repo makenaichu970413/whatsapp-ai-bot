@@ -1,0 +1,36 @@
+version: "3.8" # Specifies the version of the Docker Compose file format
+
+services:
+  mongodb:
+    image: mongo # Uses the official MongoDB image from Docker Hub
+    container_name: mongodb # Names the container 'mongodb'
+    ports:
+      - "27017:27017" # Maps port 27017 on the host to port 27017 on the container
+    env_file:
+      - ./mongodb/mongodb.env # Loads environment variables from the specified file
+    volumes:
+      - ./mongodb/mongodb_data:/data/db # Mounts a host directory as a persistance data volume
+    networks:
+      - whatsappchatbot # Connects the service to the specified network
+
+  flaskapi:
+    build:
+      context: . # Sets the build context to the current directory
+      dockerfile: Dockerfile # Specifies the Dockerfile to use for building the image
+    container_name: flaskapi # Names the container 'flaskapi'
+    ports:
+      - "5000:5000" # Maps port 5000 on the host to port 5000 on the container
+    depends_on:
+      - mongodb # Ensures the MongoDB service starts before this service
+    volumes:
+      - ./flaskapi:/app # Mounts the host directory to the container
+    networks:
+      - whatsappchatbot # Connects the service to the specified network
+
+volumes:
+  mongodbdata:
+    driver: local # Uses the local driver for the volume
+
+networks:
+  whatsappchatbot:
+    external: true # Indicates that the network is externally defined
